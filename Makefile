@@ -6,7 +6,7 @@
 #    By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 10:00:05 by nino              #+#    #+#              #
-#    Updated: 2021/11/30 23:06:02 by nfaivre          ###   ########.fr        #
+#    Updated: 2021/12/01 00:11:36 by nfaivre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ mkdir_DIR_OBJ:
 $(DIR_OBJ)/%.o : $(DIR_SRC)/%.c ./include/ft_printf.h
 	$(CC) $(CFLAGS) -o $@ -c $< $(INCLUDE)
 
-$(NAME): $(OBJ)
+$(NAME):
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
