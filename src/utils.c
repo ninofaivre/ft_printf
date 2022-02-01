@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 15:43:21 by nino              #+#    #+#             */
-/*   Updated: 2021/11/29 13:25:47 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/02/01 17:17:43 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	ft_intlen(long long int n, char *base)
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(1, &c, sizeof(c));
 	return (1);
 }
 
@@ -52,10 +52,7 @@ int	ft_putstr(char *str)
 
 	i = 0;
 	if (!str)
-	{
-		ft_putstr("(null)");
-		return (6);
-	}
+		return(ft_putstr("(null)"));
 	while (str[i])
 		ft_putchar(str[i++]);
 	return (i);
